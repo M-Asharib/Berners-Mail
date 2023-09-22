@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <!-- site tittle -->
+    <title>Header</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+</head>
+
+<body>
+    <!-- Header start -->
+    <script>
+        // <!-- header on scroll - start -->
+        document.addEventListener("DOMContentLoaded", function() {
+            // Get the div element
+            var myDiv = document.getElementById("hello");
+
+            // Add an event listener for when the user scrolls
+            window.addEventListener("scroll", function() {
+                // Check if the user has scrolled past a certain point (e.g. 100 pixels)
+                // if (window.scrollY > 50 && window.scrollY < 650) {
+                // if (window.scrollY > 50) {
+                if (window.scrollY > 10) {
+                    // Add the "expand" class to the div element
+                    myDiv.classList.add("expand");
+                }
+                // else if (window.scrollY > 650 && window.scrollY < 750) {
+                //     myDiv.classList.remove("expand");
+                // }
+                // else if (window.scrollY > 750 && window.scrollY < 1750) {
+                //     myDiv.classList.add("expand");
+                // }
+                else {
+                    // Remove the "expand" class from the div element
+                    myDiv.classList.remove("expand");
+                }
+            });
+        });
+        // header on scroll - end
+
+        // On page on - start
+        document.addEventListener("DOMContentLoaded", function() {
+            var my_hero_h1 = document.getElementsByClassName("hero_h1");
+            var hero_h1 = my_hero_h1[0];
+            hero_h1.style.opacity = "0"; // Set initial opacity to 0
+
+            setTimeout(function() {
+                hero_h1.style.transition = "opacity 1s";
+                hero_h1.style.opacity = "1"; // Set opacity to 1 after a delay
+            }, 300); // Adjust the delay (in milliseconds) as needed
+
+            var my_hero_img = document.getElementsByClassName("hero_img");
+            var hero_img = my_hero_img[0]; // Corrected variable name
+            hero_img.style.opacity = "0"; // Set initial opacity to 0
+            setTimeout(function() {
+                hero_img.style.transition = "opacity 1s";
+                hero_img.style.opacity = "1"; // Set opacity to 1 after a delay
+            }, 800); // Adjust the delay (in milliseconds) as needed
+        });
+        // On page on - start
+        // offcanvas - start
+
+        document.addEventListener("DOMContentLoaded", function() {
+            var hero_sub_1 = document.getElementsByClassName("hero_sub_1")[0];
+            hero_sub_1.style.opacity = "0"; // Set initial opacity to 0
+
+            var text = hero_sub_1.textContent;
+            hero_sub_1.textContent = ""; // Clear the original text
+
+            var index = 0;
+
+            setTimeout(function() {
+                var intervalId = setInterval(function() {
+                    if (index < text.length) {
+                        hero_sub_1.textContent += text[index]; // Add one letter at a time
+                        index++;
+                    } else {
+                        clearInterval(intervalId); // Stop the interval once all letters are displayed
+                    }
+                }, 100); // Adjust the delay (in milliseconds) between letters if desired
+
+                hero_sub_1.style.transition = "opacity 1s";
+                hero_sub_1.style.opacity = "1"; // Set opacity to 1 after the text animation starts
+            }, 300); // Adjust the delay (in milliseconds) as needed
+        });
+        // offcanvas - end
+
+        // scroll to top - start
+        document.addEventListener('DOMContentLoaded', function() {
+            var scrollButton = document.querySelector('.scroll-to-top');
+
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    scrollButton.classList.add('show');
+                } else {
+                    scrollButton.classList.remove('show');
+                }
+            });
+        });
+        // scroll to top - end
+
+        function changetoservices() {
+            // Get references to the elements
+            var element2 = document.getElementById("nav_link_services");
+            var element2A = document.getElementById("nav_link_services_a");
+            console.log(element2);
+            var element1 = document.getElementById("nav_link_home");
+            var element3 = document.getElementById("nav_link_ourWork");
+            var element4 = document.getElementById("nav_link_contact");
+
+            // Add the "active_link" class to element2
+            element2.classList.add("active_link");
+            element2A.classList.add("text-white");
+
+            // Remove the "active_link" class from the other elements
+            element1.classList.remove("active_link");
+            element3.classList.remove("active_link");
+            element4.classList.remove("active_link");
+
+            // Add the "nav_link_" class to the other elements
+            element1.classList.add("nav_link_");
+            element3.classList.add("nav_link_");
+            element4.classList.add("nav_link_");
+        }
+
+        function changetoourwork() {
+            // Get references to the elements
+            var element3 = document.getElementById("nav_link_ourWork");
+            var element3A = document.getElementById("nav_link_ourWork_a");
+
+            var element1 = document.getElementById("nav_link_home");
+            var element2 = document.getElementById("nav_link_services");
+            var element4 = document.getElementById("nav_link_contact");
+
+            // Add the "active_link" class to element2
+            element3.classList.add("active_link");
+            element3A.classList.add("text-white");
+
+            // Remove the "active_link" class from the other elements
+            element1.classList.remove("active_link");
+            element2.classList.remove("active_link");
+            element4.classList.remove("active_link");
+
+            // Add the "nav_link_" class to the other elements
+            element1.classList.add("nav_link_");
+            element2.classList.add("nav_link_");
+            element4.classList.add("nav_link_");
+        }
+    </script>
+    <style>
+        header {
+            position: fixed;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav_link_ a {
+            color: rgb(212, 212, 212);
+            font-size: 100;
+            position: relative;
+            transition: 0.5s;
+        }
+        
+        .nav_link_ a:hover {
+            /* color: white; */
+            color: black;
+            /* font-weight: 500; */
+            background: rgb(191, 191, 191);
+            color: #000;
+        }
+        
+        .nav_link_span {
+            height: 0%;
+            width: 58.5%;
+            width: 100%;
+            position: absolute;
+            background: red;
+            z-index: -1;
+            transition: 0.5s;
+        }
+        
+        .nav_link_ a:hover .nav_link_span {
+            height: 70%;
+            height: 100%;
+            background: #ff585a;
+            /* z-index: -1; */
+        }
+        
+        .active_link a {
+            color: black;
+            font-weight: 500;
+            background: white;
+            color: #000;
+        }
+        
+        .active_link a:hover {
+            color: black;
+            font-weight: 500;
+            background: #ff585a;
+            color: white;
+        }
+        
+        .active_link_active_sm {
+            background: rgb(249, 249, 249);
+            color: black;
+        }
+        
+        .nav_link_sm {
+            color: white;
+            border: 3px solid #ff585a;
+        }
+        
+        .nav_link_sm:hover {
+            /* background: #ff585ac7; */
+            border: 3px solid black;
+            /* color: #000000; */
+        }
+        /* header on scroll - start */
+        
+        #hello {
+            transition: 0.3s;
+        }
+        
+        #hello.expand {
+            /* width: 100vw; */
+            background-color: rgb(0, 0, 0);
+            box-shadow: -10px -30px 100px 0.5px rgba(255, 255, 255, 0.516), -10px -30px 100px 0.5px rgb(0, 0, 0);
+            border-bottom: 1px solid;
+            border-image: linear-gradient(to right, white, #ff585a);
+            /* border-image: linear-gradient(to right, #ff00ff, #00ffff); */
+            border-image-slice: 1;
+        }
+    </style>
+    <header id="hello" class="container-fluid bg-black">
+        <div class="container">
+            <nav class="navbar-expand-lg d-flex navbar-dark text-light">
+                <div class="w-100 d-lg-flex justify-content-center align-items-center my h-100 -auto">
+                    <span class="logo_">
+                            <a href="/">
+                                <img width height="62vh" class="py- my-"
+                                    src="/images/logo.png" alt>
+                            </a>
+                        </span>
+                    <button class="navbar-toggler float-end mt-2 me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+                            <span style="color: #ff585a;"
+                                class="navbar-toggler-ico">
+                                <i class="fa fa-bars text- p-2 fa-2x"></i>
+                            </span>
+                        </button>
+                    <div class="collapse navbar-collapse me-5" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li id="nav_link_home" class="nav-item text-center active_link border-none">
+
+                                <a id="nav_link_home_a" class="nav-link px-4" onclick="changetohome()" href="index.html">Home</a>
+                            </li>
+                            <li id="nav_link_services" class="nav-item text-center nav_link_ ">
+                                <a id="nav_link_services_a" class="nav-link text-center px-4 " onclick="changetoservices()" href="#services">
+                                        Dashboard
+                                    </a>
+                            </li>
+                            <li id="nav_link_ourWork" class="nav-item text-center nav_link_">
+                                <a id="nav_link_ourWork_a" class="nav-link text-center px-4" onclick="changetoourwork()" href="#ourwork">Login </a>
+                            </li>
+                            <li id="nav_link_contact" class="nav-item text-center nav_link_">
+                                <a id="nav_link_contact_a" class="nav-link text-center px-4" onclick="changeElements()" href="contact.html">Register</a>
+                            </li>
+                            <li id="nav_link_contact" class="nav-item text-center nav_link_">
+                                <a id="nav_link_contact_a" class="nav-link text-center px-4" onclick="changeElements()" href="contact.html">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- offcanvas -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var offcanvasElement = document.getElementById('offcanvasScrolling');
+                var offcanvas = new bootstrap.Offcanvas(offcanvasElement);
+
+                var offcanvasButton = document.querySelector('[data-bs-toggle="offcanvas"][data-bs-target="#offcanvasScrolling"]');
+
+                offcanvasButton.addEventListener('click', function(event) {
+                    event.stopPropagation(); // Stop the event from propagating further
+
+                    if (!offcanvasElement.classList.contains('show')) {
+                        offcanvas.show();
+                    }
+                });
+
+                document.addEventListener('click', function(event) {
+                    var targetElement = event.target;
+                    if (targetElement !== offcanvasElement && !offcanvasElement.contains(targetElement)) {
+                        offcanvas.hide();
+                    }
+                });
+            });
+        </script>
+        <div style="background-color: #ff585a;" class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+            <div class="offcanvas-header bg-black">
+                <img class="img-fluid w-50" src="/images/logo.png" alt>
+                <button type="button" class="btn text-reset" data-bs-dismiss="offcanvas" aria-label="Close">
+                        <i class="fa fa-close text-light"></i>
+                    </button>
+            </div>
+            <div class="offcanvas-body m-0 p-0">
+                <ul class="navbar-nav p-0 m-0">
+                    <li class="nav-item  active_link_active_sm border-none">
+                        <a class="nav-link px-4" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item nav_link_sm">
+                        <a class="nav-link px-4" href="/">
+                            <span class="nav_link_span"></span> Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item  nav_link_sm">
+                        <a class="nav-link px-4" href="/">Register</a>
+                    </li>
+                    <li class="nav-item  nav_link_sm">
+                        <a class="nav-link px-4" href="/">Sign In</a>
+                    </li>
+                    <li class="nav-item  nav_link_sm">
+                        <a class="nav-link px-4" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="offcanvas-header bg-black px-5">
+                <div class="mx-auto d-fle ">
+                    <p style="color: #ffffffb0;" class="text- mt-2 p-0 m-0 ms-2">follow us on:</p>
+                    <i class="fa-brands fa-facebook-square fa-2x text-light px-2 " aria-hidden="true"></i>
+                    <i class="fa-brands fa-instagram-square fa-2x text-light px-2" aria-hidden="true"></i>
+                    <i class="fa-brands fa-pinterest-square fa-2x text-light px-2" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header end -->
+    <section class="py-5" style="height: 90; background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(158,0,255,1) 50%, rgba(255,255,255,1) 100%); margin-top: 10vh; color: white; text-align: center; text-shadow: 10px 10px 10px black;">
+        <!-- <section class="py-5" style="height: 90vh; background: rgb(255,255,255);
+background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(158,0,255,1) 50%, rgba(255,255,255,1) 100%); margin-top: 10vh; color: white; text-align: center; text-shadow: 10px 10px 10px black;"> -->
+
+        <div class="py-5 mt-lg-5 ">
+            <h1 class="mt-2 d-lg-block d-none" style="  font-size: 6rem;">Berners Mail
+            </h1>
+            <h1 class="mt-2 d-lg-none d-block" style="  font-size: 4rem;">Berners Mail
+            </h1>
+            <p class=" d-lg-none d-block" style="font-size: 1em; font-weight: 100;">Send email with us, And boost your email marketing</p>
+            <p class=" d-lg-block d-none" style="font-size: 1.5em; font-weight: 100;">Send email with us, And boost your email marketing</p>
+            <div class="button_hero  mt-5">
+                <style>
+                    button {
+                        position: relative;
+                        display: inline-block;
+                        cursor: pointer;
+                        outline: none;
+                        border: 0;
+                        vertical-align: middle;
+                        text-decoration: none;
+                        background: transparent;
+                        padding: 0;
+                        font-size: inherit;
+                        font-family: inherit;
+                    }
+                    
+                    button.learn-more {
+                        width: 12rem;
+                        height: auto;
+                    }
+                    
+                    button.learn-more .circle {
+                        transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+                        position: relative;
+                        display: block;
+                        margin: 0;
+                        width: 3rem;
+                        height: 3rem;
+                        background: #282936;
+                        border-radius: 1.625rem;
+                    }
+                    
+                    button.learn-more .circle .icon {
+                        transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        margin: auto;
+                        background: #fff;
+                    }
+                    
+                    button.learn-more .circle .icon.arrow {
+                        transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+                        left: 0.625rem;
+                        width: 1.125rem;
+                        height: 0.125rem;
+                        background: none;
+                    }
+                    
+                    button.learn-more .circle .icon.arrow::before {
+                        position: absolute;
+                        content: "";
+                        top: -0.29rem;
+                        right: 0.0625rem;
+                        width: 0.625rem;
+                        height: 0.625rem;
+                        border-top: 0.125rem solid #fff;
+                        border-right: 0.125rem solid #fff;
+                        transform: rotate(45deg);
+                    }
+                    
+                    button.learn-more .button-text {
+                        transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        padding: 0.75rem 0;
+                        margin: 0 0 0 1.85rem;
+                        color: #ffffff;
+                        font-weight: 700;
+                        line-height: 1.6;
+                        text-align: center;
+                        text-transform: uppercase;
+                        text-shadow: 10px 10px 10px black;
+                    }
+                    
+                    button:hover .circle {
+                        width: 100%;
+                    }
+                    
+                    button:hover .circle .icon.arrow {
+                        background: #fff;
+                        transform: translate(1rem, 0);
+                    }
+                    
+                    button:hover .button-text {
+                        color: #fff;
+                        text-shadow: 0px 0px 50px white;
+                    }
+                </style>
+
+                <button class="learn-more">
+                        <span class="circle" aria-hidden="true">
+                            <span class="icon arrow"></span>
+                        </span>
+                        <span class="button-text">Learn More</span>
+                    </button>
+            </div>
+        </div>
+    </section>
+    <section class="bg-dark py-5 container" style="background: #333333; color: white;">
+        <div class="container pb-5">
+
+            <style>
+                .table-dark {
+                    background: #333333;
+                }
+            </style>
+            <h6 style=" font-size: 3em;        background: -webkit-linear-gradient(#FF585A, #FF585A, #ffffff);        -webkit-background-clip: text;        -webkit-text-fill-color: transparent;">
+                Frequency</h6>
+            <div class="pt-2" style=" border-bottom: 2px solid #9705F0;"></div>
+
+            <table class="table table-dark " style="font-size: 1.5em; background-color: #333333;">
+                <thead>
+                    <th>Application</th>
+                    <th>Hours</th>
+                    <th>Count</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Gmail</td>
+                        <td>24 hours</td>
+                        <td>300</td>
+                    </tr>
+                    <tr>
+                        <td>Custom SMTP</td>
+                        <td>24 hours</td>
+                        <td>2,400</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="float-end">
+                <style>
+                    .btn-53,
+                    .btn-53 *,
+                    .btn-53 :after,
+                    .btn-53 :before,
+                    .btn-53:after,
+                    .btn-53:before {
+                        border: 0 solid;
+                        box-sizing: border-box;
+                    }
+                    
+                    .btn-53 {
+                        -webkit-tap-highlight-color: transparent;
+                        -webkit-appearance: button;
+                        background-color: #000;
+                        background-image: none;
+                        color: #fff;
+                        cursor: pointer;
+                        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+                        font-size: 100%;
+                        line-height: 1.5;
+                        margin: 0;
+                        -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+                        padding: 0;
+                    }
+                    
+                    .btn-53:disabled {
+                        cursor: default;
+                    }
+                    
+                    .btn-53:-moz-focusring {
+                        outline: auto;
+                    }
+                    
+                    .btn-53 svg {
+                        display: block;
+                        vertical-align: middle;
+                    }
+                    
+                    .btn-53 [hidden] {
+                        display: none;
+                    }
+                    
+                    .btn-53 {
+                        border: 1px solid white;
+                        /* border-radius: 999x; */
+                        box-sizing: border-box;
+                        display: block;
+                        font-weight: 900;
+                        overflow: hidden;
+                        padding: 1.2rem 3rem;
+                        position: relative;
+                        text-transform: uppercase;
+                    }
+                    
+                    .btn-53 .original {
+                        background: #fff;
+                        color: #000;
+                        display: grid;
+                        inset: 0;
+                        place-content: center;
+                        position: absolute;
+                        transition: transform 0.2s cubic-bezier(0.87, 0, 0.13, 1);
+                    }
+                    
+                    .btn-53:hover .original {
+                        transform: translateY(100%);
+                    }
+                    
+                    .btn-53 .letters {
+                        display: inline-flex;
+                    }
+                    
+                    .btn-53 span {
+                        opacity: 0;
+                        transform: translateY(-15px);
+                        transition: transform 0.2s cubic-bezier(0.87, 0, 0.13, 1), opacity 0.2s;
+                    }
+                    
+                    .btn-53 span:nth-child(2n) {
+                        transform: translateY(15px);
+                    }
+                    
+                    .btn-53:hover span {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                    
+                    .btn-53:hover span:nth-child(2) {
+                        transition-delay: 0.1s;
+                    }
+                    
+                    .btn-53:hover span:nth-child(3) {
+                        transition-delay: 0.2s;
+                    }
+                    
+                    .btn-53:hover span:nth-child(4) {
+                        transition-delay: 0.3s;
+                    }
+                    
+                    .btn-53:hover span:nth-child(5) {
+                        transition-delay: 0.4s;
+                    }
+                    
+                    .btn-53:hover span:nth-child(6) {
+                        transition-delay: 0.5s;
+                    }
+                </style>
+
+                <button class="btn-53">
+                        <div class="original">More</div>
+                        <div class="letters">
+
+                            <span>M</span>
+                            <span>o</span>
+                            <span>r</span>
+                            <span>e</span>
+
+                        </div>
+                    </button>
+            </div>
+        </div>
+
+    </section>
+    <!-- STOP SENDING EMAILS LIKE FOOLS - Start -->
+    <section>
+        <style>
+            .btn {
+                transition: 0.5s;
+            }
+            
+            .btn:hover {
+                background: #000;
+                color: white;
+            }
+        </style>
+        <div class="container px-4 mt-5" style>
+            <div class="row " style="background-color: #71b1b0; border-radius: 50px;">
+                <div class="col-lg-9 ">
+                    <div class="p-5">
+                        <h3 class="d-lg-block d-none" style="color: #333333; font-size: 4em; font-weight: 800;">STOP SENDING EMAILS LIKE FOOLS</h3>
+                        <h3 class="d-lg-none d-block" style="color: #333333; font-size: 2.5em; font-weight: 800;">STOP SENDING EMAILS LIKE FOOLS
+                        </h3>
+                        <div style="border-radius: 40px; ;" class="btn btn-light mt-4 px-5 py-2">Check out</div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <img class="img-fluid d-lg-block d-none" style="border-radius: 40px;" src="/images/character bubble.png" alt>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- STOP SENDING EMAILS LIKE FOOLS - End -->
+
+    <!-- STOP SENDING EMAILS LIKE FOOLS - Start -->
+    <section>
+        <style>
+            .btn {
+                transition: 0.5s;
+            }
+            
+            .btn:hover {
+                background: #000;
+                color: white;
+            }
+        </style>
+        <div class="container px-4 mt-5" style>
+            <div class="row p-5" style="background-color: #000000; border-radius: 50px;">
+                <div class="col-lg-12 mb-3">
+                    <div class>
+                        <h3 class="d-lg-block d-none" style="color: #d5d5d5; font-size: 2em; font-weight: 800;">Our Customer
+                        </h3>
+                        <hr style="color: white;">
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col-3 my-auto p-auto">
+                        <img class="img-fluid d-lg-block d-none" src="/images/fae logo.png" alt>
+                    </div>
+                    <div class="col-1 my-auto p-auto"></div>
+                    <div class="col-3 my-auto p-auto">
+                        <img class="img-fluid d-lg-block d-none" src="/images/Afaan-Interntional-Logo-White.png" alt>
+                    </div>
+                    <div class="col-1 my-auto py-auto"></div>
+                    <div class="col-3 my-auto p-auto">
+                        <img class="img-fluid d-lg-block d-none" src="/images/ABE_LOGO.png" alt>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- STOP SENDING EMAILS LIKE FOOLS - End -->
+
+    <!-- STOP SENDING EMAILS LIKE FOOLS - Start -->
+    <section>
+        <style>
+            .btn {
+                transition: 0.5s;
+            }
+            
+            .btn:hover {
+                background: #000;
+                color: white;
+            }
+        </style>
+        <div class="container mt-5" style>
+            <div class="row py-3" style="background-color: #000000; border-radius: 100px;
+            clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);">
+                <div class="col-lg-6 mb-3">
+                    <h3 class="float-end pt-3" style="color: #d5d5d5; font-size: 1.5em; font-weight: 800;">Powered by:
+                    </h3>
+                </div>
+                <div class="col-lg-2 col-10 my-auto p-auto">
+                    <img class="img-fluid" src="/images/WebBerners - logo.png" alt>
+                </div>
+
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- STOP SENDING EMAILS LIKE FOOLS - End -->
+
+    <!-- /* footer start */ -->
+    <style>
+        footer {
+            background: #000000;
+        }
+        
+        .footer_nav ul {
+            list-style: none;
+            display: flex;
+        }
+        
+        .footer_nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            /* text-transform: uppercase; */
+            transition: 0.5s;
+        }
+        
+        .footer_nav ul li .active {
+            text-decoration: underline;
+            text-decoration-thickness: 5px;
+            text-decoration-color: white;
+            color: #ff585a;
+        }
+        
+        .footer_nav ul li a:hover {
+            cursor: pointer;
+            color: #ff585a;
+            padding-bottom: 0.5px;
+        }
+        
+        .footer_heading {
+            color: #ff585a;
+        }
+        
+        .foot_contact_info {
+            border-left: 2.5px solid rgba(255, 0, 102, 0.55);
+        }
+        
+        .foot_contact_info a,
+        .foot_contact_info td,
+        .foot_contact_info i {
+            color: rgba(255, 255, 255, 0.795);
+            text-decoration: none;
+            transition: 0.5s;
+        }
+        
+        .foot_contact_info a:hover {
+            color: #ff585a;
+            cursor: pointer;
+        }
+    </style>
+    <footer class="container-fluid py-5 mt-5">
+        <div class="container">
+            <div class="row     footer_nav">
+                <div class="col-lg-12">
+                    <ul class="p-0">
+                        <li><a class="px-lg-5 pe-3 active" href="index.html">HOME</a></li>
+                        <li><a class="px-lg-5 px-3 " href="/">Dashboard</a></li>
+                        <li><a class="px-lg-5 px-3 " href="/">Login</a></li>
+                        <li><a class="px-lg-5 px-3 " href="/">Register</a></li>
+                        <li><a class="px-lg-5 px-3 " href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="row">
+                    <div class="col-lg-7 col-12 col-md-12 col mt-5">
+                        <div class="ms-lg-5">
+                            <h4 class="footer_heading">Contact us</h4>
+                            <div class="foot_contact_info px-3">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td><i class="fa fa-envelope"></i></td>
+                                            <td class="ps-2 email"><a class href="mailto: info@webberners.com">info@webberners.com</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fas fa-mobile-alt"></i></td>
+                                            <td class="ps-2"><a class href="Phone: +92 329 300 5959">+92
+                                                        329 300 5959
+                                                    </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fa fa-location mb-4"></i></td>
+                                            <td class="ps-2"><a class>A-695,
+                                                        street no. 9, lucknow
+                                                        society,
+
+                                                        <br>
+                                                        landhi road, Karachi,
+                                                        Pakistan</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-12 col-md-12 col mt-3 ms-lg-5 mt-5">
+                        <div class="d-flex">
+
+                            <i class="fa-solid fa-clock fa-3x text-warning d-none d-lg-block"></i>
+                            <h4 class="footer_heading mt-2 ms-lg-3 ">Working Hours
+                            </h4>
+                        </div>
+                        <div class="foot_contact_info ps-3 ps-lg-2 mt-lg-4">
+
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>Monday - Thursday: </td>
+                                        <td class="ps-2"><a class>9:00 AM -
+                                                    7:00 PM</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Friday - Saturday: </td>
+                                        <td class="ps-2"><a class>9:00 AM -
+                                                    3:00 PM</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- /* footer end */ -->
+
+
+</body>
+
+</html>
